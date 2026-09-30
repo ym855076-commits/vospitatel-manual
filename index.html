@@ -1,218 +1,296 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="tk" id="html-root">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Практическое руководство воспитателя: Специфика работы в школе-интернате №5 города Туркменабат</title>
+    <title>Terbiýeçiniň gündelik amaly gollanmasy - 5-nji ýörite mekdep-internat</title>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1a365d">
     <style>
         :root {
-            --bg-color: #f9f9f9;
-            --text-color: #000000;
-            --section-bg: #ffffff;
-            --heading-color: #1a365d;
-            --subheading-color: #2b6cb0;
-            --border-color: #cbd5e0;
-            --th-bg: #ebf8ff;
+            --primary: #1a365d;
+            --secondary: #2b6cb0;
+            --accent: #3182ce;
+            --bg-light: #f8fafc;
+            --text-dark: #2d3748;
+            --border-color: #e2e8f0;
+            --card-bg: #f7fafc;
+            --container-bg: #fff;
         }
         [data-theme="dark"] {
-            --bg-color: #1a202c;
-            --text-color: #e2e8f0;
-            --section-bg: #2d3748;
-            --heading-color: #90cdf4;
-            --subheading-color: #63b3ed;
+            --primary: #90cdf4;
+            --secondary: #63b3ed;
+            --accent: #4299e1;
+            --bg-light: #1a202c;
+            --text-dark: #e2e8f0;
             --border-color: #4a5568;
-            --th-bg: #2a4365;
+            --card-bg: #2d3748;
+            --container-bg: #1f2937;
         }
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.4;
-            color: var(--text-color);
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: var(--bg-color);
-            transition: background-color 0.3s, color 0.3s;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            padding: 15px;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            transition: background 0.3s, color 0.3s;
+        }
+        .container {
+            max-width: 950px;
+            margin: auto;
+            background: var(--container-bg);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: background 0.3s;
         }
         .top-controls {
             display: flex;
             justify-content: space-between;
             margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
             gap: 10px;
         }
-        .control-btn {
-            flex: 1;
-            padding: 10px;
-            background: #2b6cb0;
+        .btn-ctrl {
+            background: var(--secondary);
             color: #fff;
             border: none;
+            padding: 8px 16px;
             border-radius: 6px;
-            font-weight: bold;
             cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+            flex: 1;
+        }
+        .btn-ctrl:hover { opacity: 0.9; }
+        .header-top {
             text-align: center;
+            border-bottom: 3px double var(--border-color);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
         }
-        .control-btn:hover {
-            background: #1a365d;
-        }
-        h1, h2, h3 {
-            color: var(--heading-color);
-        }
-        h1 {
-            font-size: 22px;
-            text-align: center;
+        .ministry-banner {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 10px;
         }
-        h2 {
-            font-size: 16px;
+        h1 {
+            color: var(--primary);
             text-align: center;
-            margin-bottom: 20px;
-            color: var(--subheading-color);
-        }
-        .header-info {
-            text-align: center;
-            font-weight: bold;
-            color: var(--subheading-color);
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-        .section {
-            background: var(--section-bg);
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
+            font-size: 20px;
+            line-height: 1.4;
+            margin-top: 0;
             margin-bottom: 15px;
         }
-        th, td {
+        .author-box {
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.85;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .approval-box {
+            display: flex;
+            justify-content: space-between;
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
-            padding: 10px;
-            text-align: left;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 25px;
+            gap: 15px;
         }
-        th {
-            background-color: var(--th-bg);
-            color: var(--subheading-color);
+        h2 {
+            color: var(--secondary);
+            border-left: 4px solid var(--accent);
+            padding-left: 12px;
+            margin-top: 35px;
+            font-size: 17px;
         }
-        ul, ol {
-            padding-left: 20px;
+        p, li {
+            font-size: 14.5px;
+            text-align: justify;
         }
-        li {
-            margin-bottom: 8px;
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 12px;
+            opacity: 0.7;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
         }
         .qr-container {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 35px;
             padding: 20px;
-            background: var(--section-bg);
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         .qr-container img {
-            max-width: 180px;
+            max-width: 160px;
             height: auto;
             border: 1px solid var(--border-color);
-            padding: 10px;
+            padding: 8px;
             background: #fff;
             border-radius: 4px;
+            margin-top: 10px;
         }
+        .lang-ru { display: none; }
     </style>
 </head>
-<body data-theme="light">
+<body>
+    <div class="container">
+        <!-- Панель управления -->
+        <div class="top-controls">
+            <button class="btn-ctrl" onclick="toggleLanguage()" id="lang-btn">Русский / Türkmençe</button>
+            <button class="btn-ctrl" onclick="toggleTheme()" id="theme-btn">Gije / Gündiz (Tema)</button>
+        </div>
 
-    <div class="top-controls">
-        <button class="control-btn" onclick="toggleLanguage()" id="langBtn">Türkmençe / Русский</button>
-        <button class="control-btn" onclick="toggleTheme()" id="themeBtn">Gije / Gündiz (Tema)</button>
-    </div>
+        <!-- ТУРКМЕНСКИЙ ЯЗЫК -->
+        <div id="content-tk">
+            <div class="header-top">
+                <div class="ministry-banner">Türkmenistanyň Bilim ministrligi • Türkmenabat şäheri</div>
+                <h1>TERBIÝEÇINIŇ GÜNDELIK AMALY GOLLANMASI: 5-NJI ÝÖRITE MEKDEP-İNTERNATYŇ IŞINE HUSUSY ÇEMELEŞME</h1>
+                <div class="author-box">Eşitmekde we gepleşiginde kemçiligi bolan çagalar bilen işlemek boýunça amaly gollanma.<br><b>Taýýarlan: Mürzaew Ýusup</b></div>
+            </div>
 
-    <div class="header-info" id="ministryText">
-        TÜRKMENISTANYŇ BILIM MINISTRLIGI • TÜRKMENABAT ŞÄHERI
-    </div>
+            <div class="approval-box">
+                <div><b>Edara:</b><br>Türkmenabat şäheri, Lebap welaýatynyň 5-nji ýörite mekdep-internaty</div>
+                <div style="text-align: right;"><b>Görnüşi:</b> Amaly gündelik gollanma we usuly maslahatlar</div>
+            </div>
 
-    <h1 id="mainTitle">TERBIÝEÇINIŇ GÜNDELIK AMALY GOLLANMASI: 5-NJI ÝÖRITE MEKDEP-INTERNATYŇ IŞINE HUSUSY ÇEMELEŞME</h1>
-    <h2 id="subTitle">Eşitmekde we gepleşiginde kemçiligi bolan çagalar bilen işlemek boýunça amaly gollanma.</h2>
-    
-    <p style="text-align: center; font-style: italic; margin-bottom: 30px;" id="authorText">
-        <strong>Taýýarlan:</strong> Mурзаев Юсуп
-    </p>
+            <h2>GIRIŞ: Türkmenabat Şäherindäki 5-nji Ýörite Mekdep-Internatyň Aýratynlyklary</h2>
+            <p>Türkmenabat şäherinde ýerleşýän Lebap welaýatynyň 5-nji ýöriteleşdirilen mekdep-internaty eşidişinde we gepleşiginde kemçiligi bolan çagalara döwlet derejesinde bilim, terbiýe we hünär öwretýän esasy ýörite ojaklaryň biridir. Bu ýerde terbiýeçiniň işi diňe bir okuw sagatlary bilen çäklenmän, eýsem çagalaryň gije-gündiz howpsuzlygyny, saglygyny, durmuş endiklerini we özara gatnaşyklaryny doly üpjün etmegi talap edýär.</p>
 
-    <div class="section">
-        <h3 id="sec1Title">1. Giriş we maksatnamalar</h3>
-        <p id="sec1Text">Bu gollanma 5-nji ýörite mekdep-internatyň terbiýeçilerine amaly kömek bermek maksady bilen taýýarlandy. Esasy maksat — eşitmän ýa-da eşidişi gowşak çagalar üçin amatly şertleri döretmek.</p>
-        <ul id="sec1List">
-            <li>Çagalaryň fiziologik we psihologiki aýratynlyklaryny nazara almak.</li>
-            <li>Sosial integrasiýany we aragatnaşyk endiklerini ösdürmek.</li>
-            <li>Howpsuz we ösdüriji gurşawy üpjün etmek.</li>
-        </ul>
-    </div>
+            <h2>1-nji BÖLÜM: Smenany Kabul Etmek we Gündelik Tertibi Ýerine Ýetirmek</h2>
+            <ul>
+                <li><b>Smenany kabul ediş tertibi:</b> Öňki terbiýeçiden çagalaryň sanyny, saglyk ýagdaýyny, içerki düzgün-nyzamy we ýörite tabşyryklary anyk kabul edip almak.</li>
+                <li><b>Irden turmak we şahsy gigiýena:</b> Çagalary wagtynda turuzmak, ýüz-ellerini ýuwmak, egin-eşikleriniň arassa we tertipli bolmagyna gözegçilik etmek.</li>
+                <li><b>Nahara alyp barmak medeniýeti:</b> Naharhana gitmezden ozal çagalaryň ellerini ýuwmagyny üpjün etmek, nahar wagtynda sypaýçylyk we medeniýetli iýmitlenmek endiklerini dakmak.</li>
+            </ul>
 
-    <div class="section">
-        <h3 id="sec2Title">2. Terbiýeçilik işiniň özboluşlylygy</h3>
-        <p id="sec2Text">Eşitmekde kemçiligi bolan çagalar bilen işlemek yzygiderli ünsi we ýörite wizual serişdeleri talap edýär.</p>
-        <ol id="sec2List">
-            <li><strong>Günüň tertibini wizuallaşdyrmak:</strong> Suratlar we piktogrammalar arkaly düşündirmek.</li>
-            <li><strong>Aragatnaşyk:</strong> Jest we daktil dilini goldamak.</li>
-            <li><strong>Şahsy çemeleşme:</strong> Her çaganyň mümkinçiligini öwrenmek.</li>
-        </ol>
-    </div>
+            <h2>2-nji BÖLÜM: Okuwdan Daşary Sagatlar we Özbaşdak Taýýarlyk (Samopodgotovka)</h2>
+            <p>Eşitmekde kynçylygy bolan çagalar bilen işlemek aýratyn üns talap edýär:</p>
+            <ul>
+                <li><b>Görkezme esbaplaryny ulanmak:</b> Öý tapgyryny düşündirende ýönekeý sözler, suratlar, mimika we taýýar ýazgylardan peýdalanmak.</li>
+                <li><b>Üstünlik ýagdaýyny döretmek:</b> Çaga ýalňyşan ýagdaýynda gaharlanman, gaýta-gaýta düşündirip, her bir kiçijik üstünligini belläp geçmek arkaly onuň özüne bolan ynamyny güýçlendirmek.</li>
+                <li><b>Gezelençler we arassa howa:</b> Internatyň daş-töwereginde tertip bilen gezelenç etmek, çagalaryň ýanyndan aýrylyp gitmezligine berk gözegçilik etmek.</li>
+            </ul>
 
-    <div class="section">
-        <h3 id="sec3Title">3. Jemleýji</h3>
-        <p id="sec3Text">Bu maslahatlary ulanmak terbiýeçilik işiniň hilini ýokarlandyrmaga we çagalar bilen ynamdar gatnaşygy döretmäge kömek eder.</p>
-    </div>
+            <h2>3-nji BÖLÜM: Agşamky Wagty Gurnamak we Howpsuzlyk</h2>
+            <ul>
+                <li><b>Howpsuzlyk we saglyk kadalary:</b> Otaglarda, ýatylýan ýerlerde we sport meýdançalarynda howpsuzlyk tehnikasynyň berjaý edilmegine gözegçilik etmek.</li>
+                <li><b>Ýatmaçak wagt:</b> Çagalaryň wagtynda ýatmankara otaglary ýelejiremek, arassaçylygy barlamak we dynç alyş ýagdaýyny üpjün etmek.</li>
+                <li><b>Jemleýji maslahatlar:</b> Bu maslahatlary ulanmak terbiýeçilik işiniň hilini ýokarlandyrmaga we çagalar bilen ynamdar gatnaşygy döretmäge kömek eder.</li>
+            </ul>
 
-    <div class="qr-container">
-        <h3 id="qrTitle">Gollanmanyň QR-kody</h3>
-        <p style="font-size: 14px; margin-bottom: 15px;" id="qrDesc">Materiala tiz girmek üçin kody skanirläň:</p>
-        <img src="qrcode.png" alt="QR Code" title="QR-код руководства">
+            <h2>4-nji BÖLÜM (GOŞMAÇA): Kämil Terbiýeçilik Üçin Amaly Laýfhaklar we Usullar</h2>
+            <p>Gollanmanyň bu bölümine işi has-da ýeňilleşdirýän döwrebap we netijeli usullar girizildi:</p>
+            <ul>
+                <li><b>Wizual kartoçka ulgamy (PECS):</b> Eşidişi gowşak çagalar bilen aragatnaşygy ýeňilleşdirmek üçin stolüsti ýa-da diwara ýapyşdyrylýan suratly kartoçkalary (nahar, uky, oýun, saglyk ýagdaýy) işjeň ulanmaly. Bu çaganyň isleýän zadyny ýeňil düşündirmegine we düşünmegine kömek edýär.</li>
+                <li><b>Emocional goldaw we «Üstünlük minuty»:</b> Her agşam çagalar bilen gysgaça jemleýji söhbetdeşlik geçirip, şol günde iň gowy baştodan geçen ýa-da üstünlik gazanan çagany belläp geçmek olarda özüne bolan ynamy berkidýär.</li>
+                <li><b>Sesli däl bellikler we yşyk signallary:</b> Gije ýa-da dynç alyş wagtynda otaglarda üns çekmek üçin ýiti sesleriň ýerine ýumşak yşyk signallaryndan ýa-da el hereketlerinden peýdalanmak endigini kämilleşdirmeli.</li>
+            </ul>
+
+            <div class="qr-container">
+                <b>Gollanmanyň QR-kody</b>
+                <p style="font-size: 13px; margin: 5px 0 10px 0;">Materiala tiz girmek üçin kody skanirläň:</p>
+                <img src="qrcode.png" alt="QR Code">
+            </div>
+
+            <div class="footer">
+                Lebap welaýatynyň 5-nji ýörite mekdep-internaty, Türkmenabat şäheri &bull; 2026 ýyl
+            </div>
+        </div>
+
+        <!-- РУССКИЙ ЯЗЫК -->
+        <div id="content-ru" class="lang-ru">
+            <div class="header-top">
+                <div class="ministry-banner">Министерство образования Туркменистана • Город Туркменабат</div>
+                <h1>ПРАКТИЧЕСКОЕ РУКОВОДСТВО ВОСПИТАТЕЛЯ: СПЕЦИФИКА РАБОТЫ В ШКОЛЕ-ИНТЕРНАТЕ №5 ГОРОДА ТУРКМЕНАБАТ</h1>
+                <div class="author-box">Методическое пособие по организации воспитательного процесса для детей с нарушениями слуха.<br><b>Составитель: Мурзаев Юсуп</b></div>
+            </div>
+
+            <div class="approval-box">
+                <div><b>Учреждение:</b><br>Специальная школа-интернат №5, город Туркменабат, Лебапский велаят</div>
+                <div style="text-align: right;"><b>Тип:</b> Практическое руководство и методика</div>
+            </div>
+
+            <h2>ВВЕДЕНИЕ: Специфика специальной школы-интерната №5 г. Туркменабат</h2>
+            <p>Специальная общеобразовательная школа-интернат №5 города Туркменабат Лебапского велаята является ведущим специализированным учреждением, где воспитываются и обучаются дети с нарушениями слуха и речи. Условия круглосуточного пребывания в интернате требуют от воспитателя не только педагогического мастерства, но и глубокой душевной самоотдачи, строгого соблюдения режима и непрерывного контроля за безопасностью детей.</p>
+
+            <h2>РАЗДЕЛ 1: Прием смены и организация ежедневного распорядка</h2>
+            <ul>
+                <li><b>Алгоритм приема смены:</b> Четкая передача смены: проверка списочного состава детей, их самочувствия, внешнего вида, санитарного состояния комнат и получение инструкций от предыдущего воспитателя.</li>
+                <li><b>Утренний подъем и гигиена:</b> Своевременный подъем детей, контроль за утренней зарядкой, умыванием, чисткой зубов и опрятностью одежды.</li>
+                <li><b>Культура приема пищи в столовой:</b> Организованное сопровождение детей в столовую, контроль за мытьем рук, привитие навыков аккуратности и культуры за столом.</li>
+            </ul>
+
+            <h2>РАЗДЕЛ 2: Внеурочное время и организация самоподготовки</h2>
+            <p>Оказание помощи неслышащим детям при выполнении домашних заданий в интернате имеет свои особенности:</p>
+            <ul>
+                <li><b>Наглядность и жестовая поддержка:</b> Объяснение заданий с использованием четкой артикуляции, наглядных пособий, табличек и письменных пояснений на доске.</li>
+                <li><b>Создание ситуации успеха:</b> Поощрение каждого ребенка за малейшие успехи в учебе, избавление от страха ошибиться, поднятие уверенности в собственных силах.</li>
+                <li><b>Прогулки и свежий воздух:</b> Организованные прогулки по территории интерната под строгим контролем воспитателя, обучение правилам поведения на улице.</li>
+            </ul>
+
+            <h2>РАЗДЕЛ 3: Вечернее время и безопасность</h2>
+            <ul>
+                <li><b>Правила безопасности и охраны здоровья:</b> Контроль за соблюдением правил противопожарной безопасности, электробезопасности в спальных и игровых корпусах.</li>
+                <li><b>Подготовка ко сну:</b> Проветривание спальных комнат, проверка чистоты постельного белья, создание спокойной и уютной атмосферы перед ночным отдыхом.</li>
+                <li><b>Заключение:</b> Внедрение данных рекомендаций позволит повысить качество воспитательной работы и создать атмосферу доверия в коллективе.</li>
+            </ul>
+
+            <h2>РАЗДЕЛ 4 (ДОПОЛНИТЕЛЬНЫЙ): Практические лайфхаки и методические фишки</h2>
+            <p>Данный раздел включен для максимального упрощения работы воспитателя и улучшения психологического климата:</p>
+            <ul>
+                <li><b>Система визуальных карточек (PECS):</b> Активное использование настольных или настенных карточек с изображениями (еда, сон, игра, здоровье) для облегчения общения с детьми с нарушениями слуха. Это помогает ребенку быстро и точно выразить свои потребности.</li>
+                <li><b>Эмоциональная поддержка и «Минутка успеха»:</b> Проведение короткого вечернего или дневного подведения итогов дня с выделением ребенка, который отличился или добился успехов, что существенно поднимает его самооценку.</li>
+                <li><b>Неголосовые и световые сигналы:</b> Совершенствование практики привлечения внимания в комнатах отдыха и спальнях без резких криков — с помощью мягких световых сигналов или понятных условных жестов.</li>
+            </ul>
+
+            <div class="qr-container">
+                <b>QR-код руководства</b>
+                <p style="font-size: 13px; margin: 5px 0 10px 0;">Отсканируйте код для быстрого доступа к материалу:</p>
+                <img src="qrcode.png" alt="QR Code">
+            </div>
+
+            <div class="footer">
+                Специальная общеобразовательная школа-интернат №5 г. Туркменабат &bull; Туркменистан, 2026 год
+            </div>
+        </div>
     </div>
 
     <script>
         let currentLang = 'tk';
         function toggleLanguage() {
-            currentLang = currentLang === 'tk' ? 'ru' : 'tk';
-            if (currentLang === 'ru') {
-                document.getElementById('ministryText').innerText = "МИНИСТЕРСТВО ОБРАЗОВАНИЯ ТУРКМЕНИСТАНА • ГОРОД ТУРКМЕНАБАТ";
-                document.getElementById('mainTitle').innerText = "ПРАКТИЧЕСКОЕ РУКОВОДСТВО ВОСПИТАТЕЛЯ: СПЕЦИФИКА РАБОТЫ В ШКОЛЕ-ИНТЕРНАТЕ №5 ГОРОДА ТУРКМЕНАБАТ";
-                document.getElementById('subTitle').innerText = "Методическое пособие по организации воспитательного процесса для детей с нарушениями слуха.";
-                document.getElementById('authorText').innerHTML = "<strong>Составитель:</strong> Мурзаев Юсуп";
-                document.getElementById('sec1Title').innerText = "1. Введение и цели пособия";
-                document.getElementById('sec1Text').innerText = "Настоящее методическое пособие разработано для оказания практической помощи воспитателям специальной школы-интерната №5. Основной задачей является создание оптимальных условий для воспитанников с нарушениями слуха.";
-                document.getElementById('sec1List').innerHTML = "<li>Учет психофизиологических особенностей детей с нарушениями слуха.</li><li>Формирование навыков межличностного общения и социальной интеграции.</li><li>Организация безопасной среды во внеурочное время.</li>";
-                document.getElementById('sec2Title').innerText = "2. Специфика воспитательного процесса";
-                document.getElementById('sec2Text').innerText = "Работа с детьми, имеющими нарушения слуха, требует применения специальных визуальных средств коммуникации и постоянного контроля.";
-                document.getElementById('sec2List').innerHTML = "<li><strong>Визуализация режима дня:</strong> Использование наглядных расписаний и пиктограмм.</li><li><strong>Коммуникация:</strong> Поощрение использования дактильной и жестовой речи.</li><li><strong>Индивидуальный подход:</strong> Учет степени потери слуха каждого ребенка.</li>";
-                document.getElementById('sec3Title').innerText = "3. Заключение";
-                document.getElementById('sec3Text').innerText = "Внедрение данных рекомендаций позволит повысить качество воспитательной работы и создать атмосферу доверия.";
-                document.getElementById('qrTitle').innerText = "QR-код руководства";
-                document.getElementById('qrDesc').innerText = "Отсканируйте код для быстрого доступа к материалу:";
+            const tkContent = document.getElementById('content-tk');
+            const ruContent = document.getElementById('content-ru');
+            if (currentLang === 'tk') {
+                tkContent.style.display = 'none';
+                ruContent.style.display = 'block';
+                currentLang = 'ru';
             } else {
-                document.getElementById('ministryText').innerText = "TÜRKMENISTANYŇ BILIM MINISTRLIGI • TÜRKMENABAT ŞÄHERI";
-                document.getElementById('mainTitle').innerText = "TERBIÝEÇINIŇ GÜNDELIK AMALY GOLLANMASI: 5-NJI ÝÖRITE MEKDEP-INTERNATYŇ IŞINE HUSUSY ÇEMELEŞME";
-                document.getElementById('subTitle').innerText = "Eşitmekde we gepleşiginde kemçiligi bolan çagalar bilen işlemek boýunça amaly gollanma.";
-                document.getElementById('authorText').innerHTML = "<strong>Taýýarlan:</strong> Mурзаев Юсуп";
-                document.getElementById('sec1Title').innerText = "1. Giriş we maksatnamalar";
-                document.getElementById('sec1Text').innerText = "Bu gollanma 5-nji ýörite mekdep-internatyň terbiýeçilerine amaly kömek bermek maksady bilen taýýarlandy. Esasy maksat — eşitmän ýa-da eşidişi gowşak çagalar üçin amatly şertleri döretmek.";
-                document.getElementById('sec1List').innerHTML = "<li>Çagalaryň fiziologik we psihologiki aýratynlyklaryny nazara almak.</li><li>Sosial integrasiýany we aragatnaşyk endiklerini ösdürmek.</li><li>Howpsuz we ösdüriji gurşawy üpjün etmek.</li>";
-                document.getElementById('sec2Title').innerText = "2. Terbiýeçilik işiniň özboluşlylygy";
-                document.getElementById('sec2Text').innerText = "Eşitmekde kemçiligi bolan çagalar bilen işlemek yzygiderli ünsi we ýörite wizual serişdeleri talap edýär.";
-                document.getElementById('sec2List').innerHTML = "<li><strong>Günüň tertibini wizuallaşdyrmak:</strong> Suratlar we piktogrammalar arkaly düşündirmek.</li><li><strong>Aragatnaşyk:</strong> Jest we daktil dilini goldamak.</li><li><strong>Şahsy çemeleşme:</strong> Her çaganyň mümkinçiligini öwrenmek.</li>";
-                document.getElementById('sec3Title').innerText = "3. Jemleýji";
-                document.getElementById('sec3Text').innerText = "Bu maslahatlary ulanmak terbiýeçilik işiniň hilini ýokarlandyrmaga we çagalar bilen ynamdar gatnaşygy döretmäge kömek eder.";
-                document.getElementById('qrTitle').innerText = "Gollanmanyň QR-kody";
-                document.getElementById('qrDesc').innerText = "Materiala tiz girmek üçin kody skanirläň:";
+                ruContent.style.display = 'none';
+                tkContent.style.display = 'block';
+                currentLang = 'tk';
             }
         }
+
         function toggleTheme() {
-            const body = document.body;
-            if (body.getAttribute('data-theme') === 'light') {
-                body.setAttribute('data-theme', 'dark');
+            const root = document.getElementById('html-root');
+            if (root.getAttribute('data-theme') === 'dark') {
+                root.removeAttribute('data-theme');
             } else {
-                body.setAttribute('data-theme', 'light');
+                root.setAttribute('data-theme', 'dark');
             }
         }
     </script>
