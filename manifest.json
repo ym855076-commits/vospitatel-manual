@@ -1,8 +1,11 @@
 {
-  "name": "Руководство воспитателя",
-  "short_name": "Школа-интернат №5",
-  "start_url": "./index.html",
+  "background_color": "#ffffff",
+  "dir": "ltr",
   "display": "standalone",
-  "background_color": "#f9f9f9",
-  "theme_color": "#1a365d"
+  "name": "Практическое руководство воспитателя",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Школа-интернат №5",
+  "start_url": "/",
+  "theme_color": "#ffffff"
 }
