@@ -1,11 +1,16 @@
 {
-  "background_color": "#ffffff",
-  "dir": "ltr",
-  "display": "standalone",
   "name": "Практическое руководство воспитателя",
-  "orientation": "any",
-  "scope": "/",
   "short_name": "Школа-интернат №5",
-  "start_url": "/",
-  "theme_color": "#ffffff"
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f9f9f9",
+  "theme_color": "#1a365d",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='100' fill='%231a365d'/><path d='M120 160h272v192H120z' fill='%23ffffff'/><path d='M160 200h192v20H160zm0 40h192v20H160zm0 40h120v20H160z' fill='%231a365d'/></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
